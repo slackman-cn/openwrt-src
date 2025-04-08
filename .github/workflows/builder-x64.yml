@@ -47,7 +47,7 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           # generage config file: make menuconfig
-          cp ../config.buildinfo .config
+          cp ${{github.workspace}}/x64/.config .
           # start compile
           make download
           make -j
